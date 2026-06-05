@@ -15,5 +15,13 @@
     <description>Updates for Gitmunk.</description>
     <language>en</language>
     <!-- BEGIN ITEMS -->
+    <item>
+      <title>Version 1.0</title>
+      <pubDate>Fri, 05 Jun 2026 21:06:28 +0000</pubDate>
+      <sparkle:version>19</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v1.0/Gitmunk-1.0.dmg" type="application/octet-stream" sparkle:edSignature="c4DOU2iC1xvMZAbUCbVY1KMebVfzKdmxMVQgEZ/hFk8gT/qKl2ke/yPyAf/FZPGbSs55JgMdS3uaH6xit9PaAQ==" length="5127512" />
+    </item>
   </channel>
 </rss>
