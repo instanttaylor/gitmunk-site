@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparkle appcast for Gitmunk. Served via GitHub Pages at
+  https://instanttaylor.github.io/gitmunk-site/appcast.xml (matches SUFeedURL).
+
+  Each release adds an <item> right after the BEGIN ITEMS marker (newest first).
+  scripts/release.sh does this automatically; you rarely edit it by hand.
+-->
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Gitmunk</title>
+    <link>https://instanttaylor.github.io/gitmunk-site/appcast.xml</link>
+    <description>Updates for Gitmunk.</description>
+    <language>en</language>
+    <!-- BEGIN ITEMS -->
+  </channel>
+</rss>
