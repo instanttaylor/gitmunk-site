@@ -16,6 +16,15 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 1.0.1</title>
+      <pubDate>Mon, 08 Jun 2026 17:01:01 +0000</pubDate>
+      <description><![CDATA[<ul><li>Newly cloned repos now show up on their own — no need to refresh.</li><li>New repos are marked with a &quot;NEW&quot; badge until you open them.</li></ul>]]></description>
+      <sparkle:version>21</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v1.0.1/Gitmunk-1.0.1.dmg" type="application/octet-stream" sparkle:edSignature="TiXTQnz3OV1ondZlCzVBq3ExeKQYVwdRtCBolI1Y9hmvNzdERVlJn7YO757cahQuONDmvQtLibPmAtFeytxpAg==" length="5181829" />
+    </item>
+    <item>
       <title>Version 1.0</title>
       <pubDate>Fri, 05 Jun 2026 21:06:28 +0000</pubDate>
       <sparkle:version>19</sparkle:version>
