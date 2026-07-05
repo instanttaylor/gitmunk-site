@@ -16,6 +16,15 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 1.1.2</title>
+      <pubDate>Sun, 05 Jul 2026 17:39:13 +0000</pubDate>
+      <description><![CDATA[<ul><li>**Tagged commits now show their tags.** If a commit is tagged — like a release (`v1.1.1`) — that tag now appears as a small badge right on the commit row, in both the dashboard and the repo view.</li></ul>]]></description>
+      <sparkle:version>54</sparkle:version>
+      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v1.1.2/Gitmunk-1.1.2.dmg" type="application/octet-stream" sparkle:edSignature="OyS0nZnsK9IapAnSAvdveDGWlCrOVwI8EUmhTU9zw2YlE/aJ0aNu8ZHKdEcFBNvq8wLgScfRbCwCIri+w02UCQ==" length="5467757" />
+    </item>
+    <item>
       <title>Version 1.1.1</title>
       <pubDate>Fri, 03 Jul 2026 14:51:23 +0000</pubDate>
       <description><![CDATA[<ul><li>**Fixed the freeze-after-close.** Leaving Gitmunk running with its window closed could, given enough time and activity, wedge it completely — the dock icon wouldn&#x27;t bring it back and only a force-quit did. That&#x27;s fixed.</li><li>**Sidebar stays put on reopen.** Reopening the window after it had been closed for a while could briefly scramble your sidebar order for a few seconds while it re-synced. It holds its place now.</li><li>**Refreshing is instant now.** Your repos and their commit counts update from local state immediately, while GitHub syncs in the background — no more waiting on the network.</li><li>**The dashboard shows what you&#x27;ll actually pull** — the incoming commits themselves, not just a number.</li><li>**Opening a repo is faster.** Recent commits appear right away, and revisiting a repo you&#x27;ve already opened no longer reloads or gets stuck on &quot;Loading…&quot;.</li><li>**New Branches tab.** See which branches need attention and catch them up to their remote (fast-forward) without checking them out — plus clean up branches already merged into your default, with a note on why they&#x27;re safe to remove.</li><li>**Redesigned repo view** — Files / Branches / PRs tabs with a cleaner, card-based layout.</li><li>**Multiple GitHub accounts** now work — repos across different signed-in `gh` accounts resolve and load correctly.</li></ul>]]></description>
