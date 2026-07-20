@@ -16,6 +16,15 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 1.2.0</title>
+      <pubDate>Mon, 20 Jul 2026 14:01:11 +0000</pubDate>
+      <description><![CDATA[<ul><li>**Repository views are persistent and faster.** Gitmunk now stores repository state and Recent Commits locally, so reopening the app or switching repositories is faster and more stable. Cached feeds refresh only when the underlying Git history changes.</li><li>**Rename repositories locally.** Give a repository a custom display name from the sidebar, then reset it whenever you like without changing its folder or GitHub name.</li><li>**Protect important branches.** Use the new lock controls to exclude branches from **Safe to clean up** and keep them visible under **Active + Protected**.</li><li>**Repository pages stay steady.** Switching repositories no longer flashes or unnecessarily reloads Recent Commits, and loading older commits is now an explicit action.</li><li>**Refreshes are more reliable.** Local and remote commit feeds merge cleanly, filesystem refreshes target only affected repositories, and every refresh indicator stays synchronized through the complete refresh.</li><li>**History changes are detected precisely.** Rebases, force pushes, and amended commits now invalidate cached feeds correctly.</li><li>**Commit titles are clickable.** Dashboard commit rows now expand when you click either the title or the surrounding row.</li><li>**Preferences survive GitHub renames.** Local names, protected branches, and other repository preferences follow the repository when its GitHub name changes.</li></ul>]]></description>
+      <sparkle:version>57</sparkle:version>
+      <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v1.2.0/Gitmunk-1.2.0.dmg" type="application/octet-stream" sparkle:edSignature="Jh3gl8UKo1r9/stbItG8WUmnWWOQc6HcgxD9tvRFtdM4e+lGfetBRVyZuJnIETg0rwN8mwjH0EP6OF9AxYuwDA==" length="5537043" />
+    </item>
+    <item>
       <title>Version 1.1.2</title>
       <pubDate>Sun, 05 Jul 2026 17:39:13 +0000</pubDate>
       <description><![CDATA[<ul><li>**Tagged commits now show their tags.** If a commit is tagged — like a release (`v1.1.1`) — that tag now appears as a small badge right on the commit row, in both the dashboard and the repo view.</li></ul>]]></description>
