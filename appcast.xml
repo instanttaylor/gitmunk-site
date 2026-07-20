@@ -16,6 +16,27 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 1.2.1</title>
+      <pubDate>Mon, 20 Jul 2026 20:53:22 +0000</pubDate>
+      <description sparkle:format="markdown"><![CDATA[- **Pull more than one repository at a time.** Start a pull, switch repositories, and start another without waiting. Each repository shows its own progress, while Pull All safely skips work already underway.
+- **Merged branch cleanup handles stale upstreams correctly.** When a local branch is fully merged into your default branch but ahead of its tracking branch, Gitmunk now verifies it against the default branch and cleans it up safely.
+
+_And everything introduced in 1.2.0:_
+
+- **Repository views are persistent and faster.** Gitmunk stores repository state and Recent Commits locally, making reopening the app and switching repositories faster and more stable.
+- **Rename repositories locally.** Give a repository a custom display name without changing its folder or GitHub name.
+- **Protect important branches.** Lock branches to keep them out of **Safe to clean up** and visible under **Active + Protected**.
+- **Repository pages stay steady.** Switching repositories no longer flashes or unnecessarily reloads Recent Commits.
+- **Refreshes are more reliable.** Local and remote histories merge cleanly, and refreshes target only affected repositories.
+- **History changes are detected precisely.** Rebases, force pushes, and amended commits invalidate cached feeds correctly.
+- **Commit titles are clickable.** Dashboard commit rows expand from either the title or surrounding row.
+- **Preferences survive GitHub renames.** Local names, protected branches, and other preferences follow renamed repositories.]]></description>
+      <sparkle:version>61</sparkle:version>
+      <sparkle:shortVersionString>1.2.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v1.2.1/Gitmunk-1.2.1.dmg" type="application/octet-stream" sparkle:edSignature="bMH1XQ+H5xgO6dhEvIaXzscSTf47uFvBF/29/WG/ac90xxsripl5mbBUkepM6vriRpL87lDTBq7CgCplU10aCg==" length="5551989" />
+    </item>
+    <item>
       <title>Version 1.2.0</title>
       <pubDate>Mon, 20 Jul 2026 14:01:11 +0000</pubDate>
       <description><![CDATA[<ul><li>**Repository views are persistent and faster.** Gitmunk now stores repository state and Recent Commits locally, so reopening the app or switching repositories is faster and more stable. Cached feeds refresh only when the underlying Git history changes.</li><li>**Rename repositories locally.** Give a repository a custom display name from the sidebar, then reset it whenever you like without changing its folder or GitHub name.</li><li>**Protect important branches.** Use the new lock controls to exclude branches from **Safe to clean up** and keep them visible under **Active + Protected**.</li><li>**Repository pages stay steady.** Switching repositories no longer flashes or unnecessarily reloads Recent Commits, and loading older commits is now an explicit action.</li><li>**Refreshes are more reliable.** Local and remote commit feeds merge cleanly, filesystem refreshes target only affected repositories, and every refresh indicator stays synchronized through the complete refresh.</li><li>**History changes are detected precisely.** Rebases, force pushes, and amended commits now invalidate cached feeds correctly.</li><li>**Commit titles are clickable.** Dashboard commit rows now expand when you click either the title or the surrounding row.</li><li>**Preferences survive GitHub renames.** Local names, protected branches, and other repository preferences follow the repository when its GitHub name changes.</li></ul>]]></description>
