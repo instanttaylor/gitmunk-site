@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gitmunk — keep every clone up to date</title>
-<meta name="description" content="A native macOS app that keeps all your local git clones up to date, shows what's behind across every repo, and summarizes what changed — entirely on-device.">
+<title>Gitmunk — every clone under control</title>
+<meta name="description" content="A native macOS app for seeing what changed across every local git clone, safely catching up repositories and branches, and keeping your workspace organized.">
 <link rel="icon" href="icon.png">
 <meta property="og:title" content="Gitmunk">
-<meta property="og:description" content="Keep all your local git clones up to date — and see what changed.">
-<meta property="og:image" content="icon.png">
+<meta property="og:description" content="See what changed, catch up safely, and keep every local git clone under control.">
+<meta property="og:image" content="https://instanttaylor.github.io/gitmunk-site/icon.png">
 <style>
   :root{
     --bg:#0a0b0e;
@@ -19,7 +19,7 @@
     --line-2:rgba(255,255,255,.16);
     --ink:#eef0f4;
     --muted:#969ba6;
-    --muted-2:#646a76;
+    --muted-2:#777e8b;
     --violet:#8b5cf6;
     --violet-br:#a78bfa;
     --lav:#b9aee0;
@@ -178,6 +178,22 @@
   .chip{font-family:var(--mono);font-size:.78rem;padding:.35em .7em;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--muted);display:inline-flex;gap:.4em;align-items:center}
   .chip .star{color:var(--amber)}
 
+  .commit-list,.branch-list{display:flex;flex-direction:column}
+  .commit-row,.branch-row{display:flex;align-items:center;gap:13px;padding:12px 14px;border-bottom:1px solid rgba(201,184,245,.07)}
+  .commit-row:last-child,.branch-row:last-child{border-bottom:0}
+  .commit-copy,.branch-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
+  .commit-title,.branch-name{color:var(--ink);font-family:var(--sans);font-size:.86rem;font-weight:550;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .commit-meta,.branch-meta{color:var(--muted-2);font-family:var(--mono);font-size:.7rem}
+  .sha{font-family:var(--mono);font-size:.7rem;color:var(--lav);border:1px solid rgba(185,174,224,.22);background:rgba(185,174,224,.06);padding:.22em .5em;border-radius:6px}
+  .file-count{font-family:var(--mono);font-size:.7rem;color:var(--muted);white-space:nowrap}
+  .branch-icon{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(139,92,246,.12);color:var(--violet-br);font-size:.78rem}
+  .branch-actions{display:flex;align-items:center;gap:8px}
+  .mini-action{font-family:var(--sans);font-size:.72rem;font-weight:600;color:var(--ink);border:1px solid var(--line-2);border-radius:7px;padding:.3em .58em;background:rgba(255,255,255,.05)}
+  .safe{color:var(--green)}
+  .protected{color:var(--amber)}
+  .supporting{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px 0 4px}
+  .supporting span{font-family:var(--mono);font-size:.73rem;color:var(--muted);padding:.48em .78em;border:1px solid var(--line);border-radius:100px;background:var(--panel)}
+
   /* privacy strip */
   .privacy{margin-top:30px;border:1px solid var(--line);border-radius:22px;padding:40px;text-align:center;background:linear-gradient(180deg,rgba(139,92,246,.05),var(--panel));position:relative;overflow:hidden}
   .privacy h2{margin:0 0 .3em}
@@ -227,13 +243,14 @@
   </div>
 </nav>
 
+<main>
 <header>
   <div class="wrap">
     <span class="eyebrow load d1"><span class="dot"></span>Native macOS · on-device</span>
     <div class="hero-grid">
       <div>
-        <h1 class="load d2">Every clone,<br><span class="em">always current.</span></h1>
-        <p class="lede load d3">Keep all your local git clones up to date — and see exactly what changed.</p>
+        <h1 class="load d2">Every clone,<br><span class="em">under control.</span></h1>
+        <p class="lede load d3">See what changed, catch up safely, and keep every local git clone in order.</p>
         <div class="cta load d4">
           <a class="btn btn-primary" href="https://github.com/instanttaylor/gitmunk-site/releases/latest">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -243,7 +260,7 @@
         </div>
         <div class="req load d5">
           <svg viewBox="0 0 16 16" fill="currentColor"><path d="M11.2 1H4.8C3.8 1 3 1.8 3 2.8v10.4C3 14.2 3.8 15 4.8 15h6.4c1 0 1.8-.8 1.8-1.8V2.8C13 1.8 12.2 1 11.2 1ZM8 14a.8.8 0 1 1 0-1.6A.8.8 0 0 1 8 14Z"/></svg>
-          Requires macOS 26 or later · Updates automatically
+          Gitmunk 1.2.1 · Requires macOS 26 or later · Updates automatically
         </div>
       </div>
       <div class="hero-icon load d3"><img src="icon.png" alt="Gitmunk app icon"></div>
@@ -256,7 +273,7 @@
     <div class="sec-head reveal">
       <span class="kicker">What it does</span>
       <h2>Stop checking repos one by one.</h2>
-      <p>Gitmunk watches the folders where you keep your clones and gives you one place to see — and fix — what's fallen behind.</p>
+      <p>Gitmunk watches the folders where you keep your clones and gives you one place to understand what changed, catch up safely, and keep the whole workspace tidy.</p>
     </div>
 
     <div class="bento">
@@ -279,8 +296,8 @@
       <!-- pull all -->
       <div class="card reveal">
         <span class="c-label">02 — Pull All</span>
-        <h3>Catch up in one click</h3>
-        <p>Fast-forward every repo that's behind at once. Never a stray merge commit — it only moves what can move cleanly.</p>
+        <h3>Catch up without stopping</h3>
+        <p>Pull everything at once, or start one repo and move straight to the next. Each pull runs independently and only fast-forwards what can move cleanly.</p>
         <div class="demo">
           <div class="pull-demo">
             <span class="pull-btn">⟳ Pull All <span style="opacity:.7">(29)</span></span>
@@ -293,19 +310,52 @@
         </div>
       </div>
 
-      <!-- organize (wide) -->
+      <!-- recent commits (wide) -->
       <div class="card wide reveal">
-        <span class="c-label">03 — Organize</span>
-        <h3>Your repos, your way</h3>
-        <p>Star the ones you live in, group the rest, hide the noise. Favorites pin to the top, groups keep projects together — the sidebar bends to how you actually work.</p>
+        <span class="c-label">03 — Recent Commits</span>
+        <h3>Know what changed before you pull</h3>
+        <p>See the actual incoming commits and files, not just a number. Repository history is stored locally, so revisiting a repo feels immediate and stays accurate through rebases and force pushes.</p>
+        <div class="demo">
+          <div class="ui">
+            <div class="ui-bar"><i></i><i></i><i></i><span>Recent Commits · acorns</span></div>
+            <div class="commit-list">
+              <div class="commit-row"><span class="sha">a1c4f</span><div class="commit-copy"><span class="commit-title">Cache the acorn index between launches</span><span class="commit-meta">Theodore · 18 minutes ago</span></div><span class="file-count">4 files</span></div>
+              <div class="commit-row"><span class="sha">91bd2</span><div class="commit-copy"><span class="commit-title">Fix duplicate stash on cold start</span><span class="commit-meta">Simon · yesterday</span></div><span class="file-count">2 files</span></div>
+              <div class="commit-row"><span class="sha">4e72a</span><div class="commit-copy"><span class="commit-title">Prepare the tree model for multiple roots</span><span class="commit-meta">Dale · Monday</span></div><span class="file-count">7 files</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- branches (wide) -->
+      <div class="card wide reveal">
+        <span class="c-label">04 — Branches</span>
+        <h3>Keep branches healthy, without checkout gymnastics</h3>
+        <p>Catch up a branch to its remote without checking it out, see which merged branches are safe to remove, and protect the ones you never want cleanup to touch.</p>
+        <div class="demo">
+          <div class="ui">
+            <div class="ui-bar"><i></i><i></i><i></i><span>Branches · chipmunks</span></div>
+            <div class="branch-list">
+              <div class="branch-row"><span class="branch-icon">⑂</span><div class="branch-copy"><span class="branch-name">feature/winter-cache</span><span class="branch-meta">3 behind origin · fast-forwardable</span></div><div class="branch-actions"><span class="mini-action">Fast-forward</span></div></div>
+              <div class="branch-row"><span class="branch-icon safe">✓</span><div class="branch-copy"><span class="branch-name">fix/acorn-sort</span><span class="branch-meta safe">Merged into main · safe to clean up</span></div><div class="branch-actions"><span class="mini-action">Clean up</span></div></div>
+              <div class="branch-row"><span class="branch-icon protected">◆</span><div class="branch-copy"><span class="branch-name">release/1.2</span><span class="branch-meta protected">Protected from cleanup</span></div><div class="branch-actions"><span class="mini-action">Protected</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- organize -->
+      <div class="card reveal">
+        <span class="c-label">05 — Organize</span>
+        <h3>Your repos, your names</h3>
+        <p>Give repos local display names, star favorites, group related work, and hide the noise — without renaming anything on disk or GitHub.</p>
         <div class="demo">
           <div class="org-demo">
             <div class="org-col">
               <span class="org-h">★ Favorites</span>
               <div class="chips">
-                <span class="chip"><span class="star">★</span> dale</span>
-                <span class="chip"><span class="star">★</span> acorns</span>
-                <span class="chip"><span class="star">★</span> specs</span>
+                <span class="chip"><span class="star">★</span> Acorn API</span>
+                <span class="chip"><span class="star">★</span> Gitmunk Site</span>
               </div>
             </div>
             <div class="org-col">
@@ -313,22 +363,15 @@
               <div class="chips">
                 <span class="chip">Winter stash</span>
                 <span class="chip">Side projects</span>
-                <span class="chip">Acorns 2.0</span>
-              </div>
-            </div>
-            <div class="org-col">
-              <span class="org-h">⊘ Hidden</span>
-              <div class="chips">
-                <span class="chip" style="opacity:.55">hibernating</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- AI digest (wide) -->
-      <div class="card wide reveal">
-        <span class="c-label">04 — On-device digest</span>
+      <!-- AI digest -->
+      <div class="card reveal">
+        <span class="c-label">06 — On-device digest</span>
         <h3>“What changed this week?”<span class="beta">Very beta</span></h3>
         <p>Ask in plain language and get a real summary of the week's commits — features, fixes, the diffs that matter. Runs on Apple's on-device model, so it <strong style="color:var(--ink);font-weight:600">requires a Mac with Apple Intelligence</strong>.</p>
         <div class="demo">
@@ -345,16 +388,24 @@
       </div>
     </div>
 
+    <div class="supporting reveal" aria-label="More Gitmunk features">
+      <span>Multiple GitHub accounts</span>
+      <span>Tags in commit history</span>
+      <span>Automatic local refresh</span>
+      <span>Preferences survive GitHub renames</span>
+    </div>
+
     <!-- privacy -->
     <div class="privacy reveal">
       <div class="lock">
         <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor"><path d="M12 7V5A4 4 0 0 0 4 5v2H3v8h10V7h-1ZM6 5a2 2 0 1 1 4 0v2H6V5Z"/></svg>
       </div>
       <h2>Your code stays on your Mac.</h2>
-      <p>The summaries run entirely on-device with Apple Intelligence. No servers, no uploads, no telemetry — nothing about your repositories ever leaves your machine.</p>
+      <p>AI summaries run entirely on-device with Apple Intelligence. Your code and prompts aren't uploaded to an AI service, and Gitmunk includes no analytics or telemetry.</p>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap foot">
