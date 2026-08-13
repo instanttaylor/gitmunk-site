@@ -16,6 +16,19 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 2.0</title>
+      <pubDate>Thu, 13 Aug 2026 12:57:20 +0000</pubDate>
+      <description sparkle:format="markdown"><![CDATA[- **Gitmunk now runs sandboxed.** The app can only see the folders you explicitly choose — nothing else on your Mac. Updating from 1.x: your settings carry over, but macOS requires you to re-grant access to your scan folders once (Gitmunk will prompt you).
+- **A built-in Git engine.** Every Git operation now runs inside the app itself — no dependence on command-line git or Xcode tools. Repository discovery, fetching, pulling, committing, pushing, branch management, and diffs all work the same on any Mac.
+- **Simpler GitHub sign-in.** Connect GitHub with a one-click device code from the new Getting Started page — the code is copied for you and GitHub opens automatically. The old gh-based sign-in has been removed.
+- **Getting Started.** First launch opens a guided setup: connect GitHub, choose your folders, and you're off. No sign-in wall.
+- **A note on SSH remotes.** The sandboxed app fetches over HTTPS. If a clone's origin uses SSH, Gitmunk will ask you to switch it to HTTPS (`git remote set-url origin <https url>`).]]></description>
+      <sparkle:version>84</sparkle:version>
+      <sparkle:shortVersionString>2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v2.0/Gitmunk-2.0.dmg" type="application/octet-stream" sparkle:edSignature="wHQzoWw4hIl8yD7e310lm0t+83yCfdPdJhwnAkxe+cItxz9oJmL1X+8Y0Jvw1hIxqLzxbKS/oG+vw68NVb03BA==" length="7684638" />
+    </item>
+    <item>
       <title>Version 1.3</title>
       <pubDate>Wed, 05 Aug 2026 14:21:20 +0000</pubDate>
       <description sparkle:format="markdown"><![CDATA[- **Ask AI can now read the repository.** It can search files, inspect relevant code and commits, and show what it looked at instead of guessing from a short activity summary. Supported Macs can use Apple’s larger Private Cloud Compute model; otherwise it stays on-device.
