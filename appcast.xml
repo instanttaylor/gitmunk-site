@@ -16,6 +16,15 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 2.1.2</title>
+      <pubDate>Thu, 17 Sep 2026 13:15:08 +0000</pubDate>
+      <description sparkle:format="markdown"><![CDATA[- **Side-panel controls work at the top of the panel.** Code and Ask AI panels now have their own attached header, fixing Close and Open in Editor without adding extra space above the panel.]]></description>
+      <sparkle:version>89</sparkle:version>
+      <sparkle:shortVersionString>2.1.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v2.1.2/Gitmunk-2.1.2.dmg" type="application/octet-stream" sparkle:edSignature="DiukGWeHliQoTAIYXbcpzJNYPmP/gkQiDaEKh1ZFMWI2thK+kPOzeENONI5cpofm7MJfLiD5kC9n6UZ8ZTTGDA==" length="7807593" />
+    </item>
+    <item>
       <title>Version 2.1.1</title>
       <pubDate>Thu, 17 Sep 2026 12:43:13 +0000</pubDate>
       <description sparkle:format="markdown"><![CDATA[- **PRs refresh when you return to Gitmunk.** The selected repository checks for updated pull requests when the app comes back into focus, keeping its saved list and count visible while checking.]]></description>
