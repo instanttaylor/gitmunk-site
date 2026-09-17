@@ -16,6 +16,17 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 2.1</title>
+      <pubDate>Thu, 17 Sep 2026 12:24:27 +0000</pubDate>
+      <description sparkle:format="markdown"><![CDATA[- **Pull requests, right beside Branches.** See open PR counts, expand their descriptions, check merge and CI status, and open any PR on GitHub.
+- **PRs stay put while updating.** Returning to a repository shows its saved PR list and count immediately, with updates checked in the background. Refresh updates them too.
+- **A cleaner top bar.** Refresh now lives at the top of the sidebar, Account and Pull scope are in Settings, and repository content has more room.]]></description>
+      <sparkle:version>87</sparkle:version>
+      <sparkle:shortVersionString>2.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v2.1/Gitmunk-2.1.dmg" type="application/octet-stream" sparkle:edSignature="8d5+pqudaAjf8fwkoTJVwVfs7TtQKPmg0Nb2ayeQqhm8iCRbQ4bvfLZcnI1Mz8FipFvDqyK1qN5duSlgSevnAQ==" length="7791737" />
+    </item>
+    <item>
       <title>Version 2.0.2</title>
       <pubDate>Thu, 13 Aug 2026 13:47:55 +0000</pubDate>
       <description sparkle:format="markdown"><![CDATA[- **Folder access renewal now shows on Getting Started.** Upgrading from 1.x lands on the Getting Started page, so the prompt to re-grant folder access after the sandbox update now appears there too — not just on the dashboard.]]></description>
