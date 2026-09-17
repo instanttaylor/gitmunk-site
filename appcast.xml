@@ -16,6 +16,15 @@
     <language>en</language>
     <!-- BEGIN ITEMS -->
     <item>
+      <title>Version 2.1.1</title>
+      <pubDate>Thu, 17 Sep 2026 12:43:13 +0000</pubDate>
+      <description sparkle:format="markdown"><![CDATA[- **PRs refresh when you return to Gitmunk.** The selected repository checks for updated pull requests when the app comes back into focus, keeping its saved list and count visible while checking.]]></description>
+      <sparkle:version>88</sparkle:version>
+      <sparkle:shortVersionString>2.1.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <enclosure url="https://github.com/instanttaylor/gitmunk-site/releases/download/v2.1.1/Gitmunk-2.1.1.dmg" type="application/octet-stream" sparkle:edSignature="mYI0Mpok+reRyuph9BhkktxDhxVLgI84//RjxAjktOp9DErmvSZLsx0L4y/S5g1/HmqJO0Jf7OB7cNY7MvUPAw==" length="7792225" />
+    </item>
+    <item>
       <title>Version 2.1</title>
       <pubDate>Thu, 17 Sep 2026 12:24:27 +0000</pubDate>
       <description sparkle:format="markdown"><![CDATA[- **Pull requests, right beside Branches.** See open PR counts, expand their descriptions, check merge and CI status, and open any PR on GitHub.
