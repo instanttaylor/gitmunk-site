@@ -281,7 +281,7 @@
       <p>Every clone behind at once? Pull All fast-forwards every branch that can move cleanly, skips the ones that can't, and shows you exactly what landed.</p>
     </div>
     <figure class="demo-video reveal">
-      <video src="media/pull-all.mp4" poster="media/pull-all.jpg" width="1600" height="1012" muted loop playsinline preload="metadata" aria-label="Gitmunk pulling 133 commits across 7 repositories with one click"></video>
+      <video src="media/pull-all.mp4" poster="media/pull-all.jpg" width="1600" height="1012" autoplay muted loop playsinline aria-label="Gitmunk pulling 133 commits across 7 repositories with one click"></video>
     </figure>
   </div>
 </section>
@@ -441,12 +441,19 @@
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Play the demo only while it's on screen; respect reduced motion.
+  // Autoplay (muted) while on screen. If the browser blocks it or the viewer
+  // prefers reduced motion, fall back to a regular play button.
   const demo = document.querySelector('.demo-video video');
+  const showControls = () => { demo.pause(); demo.controls = true; };
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    demo.controls = true;
+    showControls();
   } else {
-    new IntersectionObserver(([e])=>{ e.isIntersecting ? demo.play().catch(()=>{}) : demo.pause(); },{threshold:.35}).observe(demo);
+    new IntersectionObserver(([e])=>{
+      if (demo.controls) return;
+      if (!e.isIntersecting) return demo.pause();
+      // An interrupted play() (AbortError) is harmless; only a real autoplay block gets the button.
+      demo.play().catch(err => { if (err.name === 'NotAllowedError') showControls(); });
+    },{threshold:.35}).observe(demo);
   }
 </script>
 </body>
